@@ -20,21 +20,13 @@ m = size(X,1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-<<<<<<< HEAD
 for i = 1:m
 	for j = 1:K
-=======
-for i = 1:size(X,1)
-	for j = 1:size(centroids,1)
->>>>>>> eaef3ac9c5ff78a3274ec95134f5967e7a06745e
 		dist(j) = sum((X(i,:) - centroids(j,:)).^2);
 	end
 	[Y, idx(i)] = min(dist);
 end
-<<<<<<< HEAD
 idx = idx';
-=======
->>>>>>> eaef3ac9c5ff78a3274ec95134f5967e7a06745e
 % =============================================================
 end
 
