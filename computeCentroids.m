@@ -13,10 +13,6 @@ function centroids = computeCentroids(X, idx, K)
 % Useful variables
 [m n] = size(X);
 
-% You need to return the following variables correctly.
-centroids = zeros(K, n);
-
-
 % ====================== YOUR CODE HERE ======================
 % Instructions: Go over every centroid and compute mean of all points that
 %               belong to it. Concretely, the row vector centroids(i, :)
@@ -25,16 +21,10 @@ centroids = zeros(K, n);
 %
 % Note: You can use a for-loop over the centroids to compute this.
 %
-
-
-
-
-
-
-
-
-% =============================================================
-
-
+centroids = [];
+for i = 1:K
+	i_examples = X(find(idx == i),:);
+	centroids = [centroids; 1/size(i_examples,1) * sum(i_examples)];
 end
-
+% =============================================================
+end
